@@ -1,7 +1,6 @@
 package sort;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author Rain
@@ -9,20 +8,30 @@ import java.util.Random;
  */
 public class Test {
     public static void main(String[] args) {
-//        int[] items = {3, 2, 3, 1, 6, 8, 10, 34};
-        int size = 1000000;
-        int[] items = new int[size];
-        Random random = new Random(2);
-        for (int i = size; i > 0; i--) {
-            items[size - i] =random.nextInt(1000);
+        LinkedHashMap<String,Integer> linkedHashMap = new LinkedHashMap<>(16,0.75f,true);
+        linkedHashMap.put("a",1);
+        linkedHashMap.put("b",2);
+        linkedHashMap.put("c",3);
+        linkedHashMap.put("d",4);
+
+        linkedHashMap.get("b");
+
+        Set<Map.Entry<String, Integer>> entries = linkedHashMap.entrySet();
+        for (Map.Entry<String,Integer> entry : entries){
+            System.out.println(entry.getKey()+":"+entry.getValue());
         }
-//        System.out.println(Arrays.toString(items));
-//        int[] items= {4,2,6,1,3,5,7};
-//        int[] nums = new int[]{5, 4, 3, 2, 1};
-        long start = System.currentTimeMillis();
-        QuickSort.forwardScanSort(items);
-        long end = System.currentTimeMillis();
-        System.out.println(end - start);
-//        System.out.println(Arrays.toString(items));
+        System.out.println();
+
+        HashMap<String,Integer> hashMap = new HashMap<>();
+        hashMap.put("a",1);
+        hashMap.put("b",3);
+        hashMap.put("c",2);
+        hashMap.put("d",4);
+
+        Set<Map.Entry<String, Integer>> entrySet = hashMap.entrySet();
+        for (Map.Entry<String,Integer> entry : entrySet){
+            System.out.println(entry.getKey()+":"+entry.getValue());
+        }
+
     }
 }
