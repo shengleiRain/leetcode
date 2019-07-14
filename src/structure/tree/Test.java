@@ -15,24 +15,13 @@ public class Test {
         tree.addNode(4);
         tree.addNode(7);
         tree.addNode(10);
-        tree.preOrderTraverse(tree.getRoot());
-        System.out.println();
         tree.middleOrderTraverse(tree.getRoot());
         System.out.println();
-        tree.postOrderTraverse(tree.getRoot());
-        System.out.println();
-        tree.levelOrderTraverse(tree.getRoot());
-        System.out.println();
+        System.out.println(tree.inOrderTraversal(tree.getRoot()));
 
-        tree.removeNode(6);
         tree.preOrderTraverse(tree.getRoot());
         System.out.println();
-        tree.middleOrderTraverse(tree.getRoot());
-        System.out.println();
-        tree.postOrderTraverse(tree.getRoot());
-        System.out.println();
-        tree.levelOrderTraverse(tree.getRoot());
-        System.out.println();
+        System.out.println(tree.preOrderTraversal(tree.getRoot()));
 
 
     }
