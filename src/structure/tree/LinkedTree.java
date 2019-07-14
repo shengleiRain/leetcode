@@ -24,14 +24,14 @@ public class LinkedTree implements Tree {
         TreeNode parent, t = root;
         do {
             parent = t;
-            if (value <= t.value) {
+            if (value <= t.val) {
                 t = t.left;
             } else {
                 t = t.right;
             }
         } while (t != null);
         TreeNode newNode = new TreeNode(value);
-        if (value <= parent.value) {
+        if (value <= parent.val) {
             parent.left = newNode;
         } else {
             parent.right = newNode;
@@ -42,11 +42,11 @@ public class LinkedTree implements Tree {
     public void removeNode(int value) {
         TreeNode t = root, parent = null;
         // 遍历查找值等于value的节点
-        while (t != null && t.value != value) {
+        while (t != null && t.val != value) {
             parent = t;
-            if (t.value < value) {
+            if (t.val < value) {
                 t = t.right;
-            } else if (t.value > value) {
+            } else if (t.val > value) {
                 t = t.left;
             }
         }
@@ -63,7 +63,7 @@ public class LinkedTree implements Tree {
                 minRightParent = minRight;
                 minRight = minRight.left;
             }
-            t.value = minRight.value;
+            t.val = minRight.val;
             parent = minRightParent;
             t = minRight;
         }
@@ -94,9 +94,9 @@ public class LinkedTree implements Tree {
     public TreeNode findNode(int value) {
         TreeNode t = root;
         while (t != null) {
-            if (t.value < value) {
+            if (t.val < value) {
                 t = t.right;
-            } else if (t.value > value) {
+            } else if (t.val > value) {
                 t = t.left;
             } else {
                 return t;
@@ -110,7 +110,7 @@ public class LinkedTree implements Tree {
         if (root == null) {
             return;
         }
-        System.out.print(root.value + " ");
+        System.out.print(root.val + " ");
         preOrderTraverse(root.left);
         preOrderTraverse(root.right);
     }
@@ -121,7 +121,7 @@ public class LinkedTree implements Tree {
             return;
         }
         middleOrderTraverse(root.left);
-        System.out.print(root.value + " ");
+        System.out.print(root.val + " ");
         middleOrderTraverse(root.right);
     }
 
@@ -132,7 +132,7 @@ public class LinkedTree implements Tree {
         }
         postOrderTraverse(root.left);
         postOrderTraverse(root.right);
-        System.out.print(root.value + " ");
+        System.out.print(root.val + " ");
     }
 
 
@@ -147,7 +147,7 @@ public class LinkedTree implements Tree {
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            System.out.print(node.value + " ");
+            System.out.print(node.val + " ");
             if (node.left != null) {
                 queue.offer(node.left);
             }
