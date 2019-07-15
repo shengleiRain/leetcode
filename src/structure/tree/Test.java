@@ -7,7 +7,7 @@ package structure.tree;
 public class Test {
 
     public static void main(String[] args) {
-        LinkedTree tree = new LinkedTree();
+        BinaryTree tree = new BinaryTree();
         tree.addNode(5);
         tree.addNode(1);
         tree.addNode(2);
